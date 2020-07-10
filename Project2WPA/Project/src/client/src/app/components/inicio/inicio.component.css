@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    padding: 10px;
+}
+
+.mat-form-field {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 10px;
+    color: blue;
+}
+
+.ContadorAsistencia {
+    width: 600px;
+    height: 200px;
+    background-color: ghostwhite;
+    border-radius: 50px 50px 50px 50px;
+    float: right;
+}
+
+.mat-header-cell {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}

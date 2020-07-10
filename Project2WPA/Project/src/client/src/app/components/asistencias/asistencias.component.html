@@ -1,0 +1,57 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="card border-warning mb-3" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <h1>Asistencias de Estudiantes</h1>
+                </div>                
+            </div>            
+        </div>  
+
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="imager">
+                    <img class="card-img-top" src="https://cdn4.iconfinder.com/data/icons/miscellaneous-84-color-shadow/128/absence_default_omission_non-attendance_non-appearance_people_video_conference-512.png" alt="Card image cap">                  
+                </div>
+                <br>    
+                <div class="Centrado">   
+                    <i class="fa fa-child" aria-hidden="true"></i> Información de Asistencias
+                </div>                
+            </div>
+
+            <div class="card-body">
+                <div class="Centrado">
+                        <table class="table table-bordered table-striped text-center">
+                            <thead> 
+                                <tr>
+                                    <th scope="col">Alumno</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Fecha</th> 
+                                    <th scope="col">Hora</th> 
+                                    <th scope="col">Estado</th>                                                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Asistencias of Asistencias">
+                                    <th scope="row">{{ Asistencias.Alumno }}</th>
+                                    <th>{{ Asistencias.NombreCompleto }}</th>
+                                    <th>{{ Asistencias.Fecha | date:"yyyy-MM-dd"}}</th>            
+                                    <th>{{ Asistencias.HORA }}</th>  
+                                    <th>{{ Asistencias.Estado }}</th>                                   
+                                </tr>
+                            </tbody>
+                        </table>         
+                </div>
+            </div>
+            <div class="card-footer small text-muted"></div>
+        </div>
+
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

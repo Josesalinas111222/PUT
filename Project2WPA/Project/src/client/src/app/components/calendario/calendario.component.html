@@ -1,0 +1,57 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Area de detalle de inicio-->
+        <div class="Centrado">
+            <div class="card border-warning mb-3" >
+                <div class="card-header ">
+                    <div class="Centrado">
+                        <h1>Actividades y Anuncios          <button class="btn btn-success" type="submit" (click)='CrearActividadCalendario()' ><h6>Crear +</h6></button></h1>
+                    </div>                
+                </div>            
+            </div>            
+            <div class="card mb-3" *ngFor="let calendario of calendario">            
+                <div class="card-header">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn3.iconfinder.com/data/icons/ui-super-basic-filled-line/32/send-512.png" alt="Card image cap">                                     
+                    </div>
+                    <br>
+                    <h5 class="card-title">{{calendario.Titulo}}</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">  | Fecha: {{calendario.FechaEvento | date:"medium" }}<p class="card-text"></p></h5>
+                    <p class="card-text">- {{calendario.Cuerpo1}} -</p>
+                    <br>
+                    <p class="card-text">- {{calendario.Cuerpo2}} -</p>
+                    <br>
+                    <p class="card-text">- {{calendario.Salida}} -</p>
+
+                    <button class="btn btn-primary" type="submit" (click)='verActividades()' ><h6>Ver Actividad </h6></button>
+                    
+                    <br>
+                    <div class="Lado">
+                        <br>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <div class="Centrado">
+                                <label class="custom-control-label" for="customCheck1">Leído y Aceptado</label>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Aviso Vigente </small>                
+                </div>                                    
+            </div>
+            <br>
+            <br>
+        </div>
+         
+        
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

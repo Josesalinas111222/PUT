@@ -1,0 +1,179 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="card border-warning mb-3" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <h1>Cursos de Docente <button class="btn btn-success" data-toggle="modal" data-target="#ModalIngresoPoliticas"  data-whatever="@mdo"><h6>Crear +</h6></button></h1>
+                </div>                
+            </div>            
+        </div>
+        
+       <!-- AQUI COMIENZA-->
+            <div class="card-group text-white bg-success mb-3" *ngFor="let Actividades of ActividadFiltro">
+                <div class="card-header bg-transparent border-success">
+                    <hr>
+                    <div class="Centrado">
+                        <div class="imager">
+                            <img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/university-indigo-vol-2/256/Thesis-512.png" alt="Card image cap">                    
+                        </div>
+                        <br>                    
+                        <i class="fa fa-child" aria-hidden="true"></i> Actividad De <h5 class="card-title">{{Actividades.NombreMateria}}</h5>                                                  
+                    </div>                
+                </div>  
+                <div class="card-body">
+                    <h4 class="card-title">{{Actividades.Titulo}}</h4>
+                    <h5 class="card-text">Detalles: {{Actividades.Cuerpo1}}</h5>
+                    <h5 class="card-text">Fecha de Creacion: {{Actividades.Fecha  | date:"medium"}}</h5>
+                    <h4 class="card-text">Puntaje: {{Actividades.Puntaje}}</h4>
+                    <h5 class="card-text">Fecha de Vencimiento: {{Actividades.FechaVencimiento  | date:"medium"}}</h5>
+                </div>
+                <br>  
+                <br>                      
+            </div>
+      <!-- AQUI TERMINA-->
+  
+        <!-- Area de detalle de inicio-->
+          <!-- Area de detalle de inicio-->
+        <div class="card border-warning mb-3" *ngFor="let CursosActuales of CursosActuales">            
+            <div class="card-header ">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/male-avatar-3/512/409_Learn_School_Teacher-512.png" alt="Card image cap">                    
+                    
+                    </div>
+                    <br>            
+                    <h5 class="card-text" >Clase de {{CursosActuales.NombreMateria}}</h5>        
+                    <i class="fa fa-child" aria-hidden="true"></i> Actividades en clase {{CursosActuales.NombreCurso}} | Sección: {{CursosActuales.NombreSeccion}} | Periodo: {{CursosActuales.NombrePeriodoEscolar}} | Tipo: {{CursosActuales.NombreJornada}}
+                    <button class="btn btn-success" type="button" (click)="MostrarMateriaFiltro(CursosActuales.Materia)"><h6>Mostrar</h6></button>
+                                        
+                </div>                
+            </div>                    
+        </div>
+
+        <ng-container *ngIf="showFiltroMateria">
+            <div class="card border-success mb-3" *ngFor="let Actividades of ActividadFiltro">
+                <div class="card-header ">
+                    
+                    <div class="Centrado">
+                        <div class="imager">
+                            <img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/university-indigo-vol-2/256/Thesis-512.png" alt="Card image cap">                    
+                        </div>
+                        <br>                    
+                        <i class="fa fa-child" aria-hidden="true"></i> Actividad
+                        <h5 class="card-title">{{Actividades.Titulo}}</h5>
+                        
+                    </div>                
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-text">Detalles: {{Actividades.Cuerpo1}}</h5>
+                    <h5 class="card-text">Fecha de Creacion: {{Actividades.Fecha  | date:"medium"}}</h5>
+                    <h4 class="card-text">Puntaje: {{Actividades.Puntaje}}</h4>
+                    <h5 class="card-text">Fecha de Vencimiento: {{Actividades.FechaVencimiento  | date:"medium"}}</h5>
+                </div>
+                <br>  
+                <br>                      
+            </div>
+        </ng-container>
+
+        
+    <br>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+       <!--  <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-tasks" aria-hidden="true"></i> Informacion de Actividades
+            </div>
+
+
+            <div class="card-body">
+                <div>
+                    
+                </div>
+            </div>           
+        </div> -->
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<div class="modal fade" id="ModalIngresoPoliticas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <img src="https://cdn2.iconfinder.com/data/icons/scenarium-silver-vol-2/128/043_add_new_plus_create-2-512.png" width="35" height="35" alt="">
+                <h5 class="modal-title" id="ModalIngresoPoliticas">Ingreso de Actividad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+
+                <!--Fecha,Alumno,Materia,Titulo,Cuerpo1,Curso,Seccion,PeriodoEscolar,Jornada,FechaVencimiento,Revisado,Finalizado,
+                    FechaCambioEstado,Institucion,Uposteo,Fposteo,PC-->
+
+                <!--Fecha de Actualizacion-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Fecha Creación:</label>
+                    <input type=date name="FechaIni" class="form-control" id="recipient-name" [value]="ob_Fecha.Fecha" >
+                </div>
+                                
+                <!--Materia
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Materia:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Materia">
+                </div>
+                -->
+                <div class="form-group">
+                    <select class="form-control form-control-primary" name="Materia" [(ngModel)]="Materia">
+                    <option selected >--Seleccione Materia--</option>
+                    <option *ngFor="let CursosActuales of CursosActuales">{{CursosActuales.NombreMateria}}</option>                  
+                    </select>
+                </div>
+
+                <!--Titulo-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Titulo:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Titulo">
+                </div>
+
+                <!--Detalle Cuerpo1-->
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Cuerpo:</label>
+                    <textarea class="form-control" id="message-text" [(ngModel)]="Cuerpo1" ></textarea>
+                </div>
+
+
+                <!--<input type="file" (change)="onChange($event)" /> -->
+
+                <!--Fecha de Vencimiento-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Fecha de Vencimiento:</label>
+                    <input type=date class="form-control" id="recipient-name" [(ngModel)]="FechaVencimiento" [value]="ob_Fecha.Fecha">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Puntaje:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Puntaje">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="AddActividad()" data-dismiss="modal">Guardar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

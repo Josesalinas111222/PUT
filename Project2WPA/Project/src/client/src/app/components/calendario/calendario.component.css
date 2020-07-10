@@ -1,0 +1,14 @@
+.imager{
+    height: 75px;
+    width: 90px;
+    text-align: center;
+    margin: auto;
+}
+
+.Centrado {        
+    text-align: center;
+  }
+
+  .Lado {        
+    text-align: left;
+  }

@@ -1,0 +1,69 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="card border-warning mb-3" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <h1>Calificaciones de Estudiantes</h1>
+                </div>                
+            </div>            
+        </div>  
+
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="imager">
+                    <img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/online-teaching-and-school/512/Grades-512.png" alt="Card image cap">                  
+                </div>
+                <div class="Centrado">
+                    <br>
+                    <i class="fa fa-child" aria-hidden="true"></i> Información de Calificaciones
+                    <div class="form-group">
+                        <hr>
+                        <select class="form-control form-control-primary" name="Materia">
+                        <option selected >--Seleccione Materia--</option>
+                        <option *ngFor="let Calificaciones of Calificaciones">{{Calificaciones.NombreMateria}}</option>                  
+                        </select>
+                        <hr>
+                        <button class="btn btn-success" type="button" ng-click="MostrarCalificacionesFiltro(Calificaciones.Materia)"><h6>Mostrar</h6></button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="card-body">
+                <div class="Centrado">
+                        <table class="table table-bordered table-responsive-md table-striped text-center"  >
+                            <thead> 
+                                <tr>
+                                    <th scope="col">Actividad</th>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Titulo</th>
+                                    <th scope="col">Fecha Vencimiento</th>
+                                    <th scope="col">Puntaje</th>
+                                    <th scope="col">Nota Final</th>
+                                    <th scope="col">Observaciones</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody class="table-bordered" *ngFor="let Calificaciones2 of Calificaciones">
+                                <tr>
+                                    <th scope="row">{{ Calificaciones2.Actividad }}</th>
+                                    <th>{{ Calificaciones2.NombreMateria }}</th>
+                                    <th>{{ Calificaciones2.Titulo }}</th>
+                                    <th>{{ Calificaciones2.FechaVencimiento }}</th>
+                                    <th>{{ Calificaciones2.Puntaje }}%</th>
+                                    <th>{{ Calificaciones2.NotaFinal }}%</th>
+                                    <th>{{ Calificaciones2.Observaciones }}</th>
+                                </tr>
+                            </tbody>
+                        </table>         
+                </div>
+            </div>
+            <div class="card-footer small text-muted"></div>
+        </div>
+    </div>
+</div>
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,59 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+         
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3" *ngFor="let ActividadFiltroMateria of ActividadFiltroMateria">
+            <div class="card-header">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/science-education-linesthetic/256/homework-book-learning-tasks-512.png" alt="Card image cap">                  
+                    </div>
+                    <br>                    
+                    <i class="fa fa-child" aria-hidden="true"></i> Evaluar Actividades
+                </div>                
+            </div>
+
+            <div class="card-body">
+                <div class="Centrado">
+
+                    <div class="form-group">                                                                                    
+                        <label for="recipient-name" class="col-form-label">Actividad:</label>                        
+                        <input type="text" class="form-control" [disabled]="true" id="recipient-name" [(ngModel)]="ActividadFiltroMateria.Materia" >
+
+                        <label for="recipient-name" class="col-form-label">Materia:</label>
+                        <input type="text" class="form-control" [disabled]="true" id="recipient-name" [(ngModel)]="ActividadFiltroMateria.NombreMateria">
+
+                        <label for="recipient-name" class="col-form-label">Titulo:</label>
+                        <input type="text" class="form-control" [disabled]="true" id="recipient-name" [(ngModel)]="ActividadFiltroMateria.Titulo">
+
+                        <label for="recipient-name" class="col-form-label">Detalles</label>
+                        <input type="text" class="form-control" [disabled]="true" id="recipient-name" [(ngModel)]="ActividadFiltroMateria.Cuerpo1" >
+
+                        <label for="recipient-name" class="col-form-label">Puntos Posibles: {{ActividadFiltroMateria.Puntaje}}</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Puntaje">
+                        
+                        <label for="message-text" class="col-form-label">Observaciones:</label>
+                        <textarea class="form-control" id="message-text" [(ngModel)]="observaciones" ></textarea>
+                    </div>  
+                
+                
+                    <button type="button" class="btn btn-primary" (click)="ModActividad()" data-dismiss="modal">Guardar</button>
+                
+    
+                    <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
+                  
+                
+                
+            </div>
+            <br>
+            <div class="card-footer small text-muted"></div>
+        </div>
+
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

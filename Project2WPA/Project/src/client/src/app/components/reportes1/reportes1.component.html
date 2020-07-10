@@ -1,0 +1,134 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+         
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/scenarium-silver-vol-1/128/002_laptop_dashboard_account_analytics_statistics_profile_desktop-2-512.png" alt="Card image cap">                  
+                    </div>
+                    <br>                    
+                    <i class="fa fa-child" aria-hidden="true"></i> Reportes
+                </div>                
+            </div>
+
+            <div class="card-body">
+                <div class="Centrado">
+
+                    <div class="card mb-3">
+                        <div class="card-header text-success">
+                            
+                            <div class="imager">
+                                <img class="card-img-top" src="https://cdn3.iconfinder.com/data/icons/school-and-education-37/96/Artboard_184-512.png" alt="Card image cap">                  
+                            </div>
+                            <br>                            
+                            <i>Nivel 1 | Información Básica</i>
+                            <br>                                                                            
+                        </div>
+                        <div class="card-body text-success">
+                            
+
+                            <button mat-button mat-raised-button color="primary" (click)="Nivel1()" data-dismiss="modal">Mostrar</button> 
+                            <hr>  
+
+                            <table class="table table-bordered table-striped text-center">
+                                <thead> 
+                                    <tr>
+                                        <th scope="col">Institución</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Grado</th>
+                                        <th scope="col">Sección</th>
+                                        <th scope="col">Periodo</th>
+                                        <th scope="col">Jornada</th>                                                                 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let Nivel1A of Nivel1A">
+                                        <th scope="row">{{ Nivel1A.NombreInstitucion }}</th>
+                                        <th>{{ Nivel1A.NombreAlumno }}</th>
+                                        <th>{{ Nivel1A.NombreCurso }}</th>
+                                        <th>{{ Nivel1A.NombreSeccion }}</th>
+                                        <th>{{ Nivel1A.NombrePeriodoEscolar }}</th> 
+                                        <th>{{ Nivel1A.NombreJornada }}</th>                                                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                               
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header text-success">
+                            
+                            <div class="imager">
+                                <img class="card-img-top" src="https://cdn3.iconfinder.com/data/icons/school-203/32/grades_excellent_result_exam-512.png" alt="Card image cap">                  
+                            </div>
+                            <br>                            
+                            <i>Nivel 2 | Calificaciones Resumidas</i>
+                            <br>                                                                            
+                        </div>
+                        <div class="card-body text-success">
+                            <button mat-button mat-raised-button color="primary" (click)="Nivel2()" data-dismiss="modal">Mostrar</button> 
+                            <hr>                            
+                            <table class="table table-bordered table-striped text-center">
+                                <thead> 
+                                    <tr>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Nota Actual</th>                                                                 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let Nivel2A of Nivel2A">
+                                        <th scope="row">{{ Nivel2A.NombreMateria }}</th>
+                                        <th>{{ Nivel2A.NotaFinal }}</th>                                                                       
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>                               
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header text-success">
+                            
+                            <div class="imager">
+                                <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/stem-11/64/Technology-advance-digital-modern-information-512.png" alt="Card image cap">                  
+                            </div>
+                            <br>                            
+                            <i>Nivel 3 | Promedios</i>
+                            <br>                                                                            
+                        </div>
+                        <div class="card-body text-success">
+                            <button mat-button mat-raised-button color="primary" (click)="Nivel3()" data-dismiss="modal">Mostrar</button> 
+                            <hr>  
+                            <table class="table table-bordered table-striped text-center">
+                                <thead> 
+                                    <tr>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Valor</th>                                                                 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let Nivel3A of Nivel3A">
+                                        <th scope="row">{{ Nivel3A.Descripcion }}</th>
+                                        <th>{{ Nivel3A.Valor }}</th>                                                                       
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>                               
+                    </div>                             
+                </div>           
+            <br>
+            <div class="card-footer small text-muted">
+                <div class="Centrado">
+                    <i>Panel de Padre de Familia</i>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,71 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="card border-warning mb-3" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <h1>Agregar Actividad al Calendario</h1>
+                </div>                
+            </div>            
+        </div>  
+
+         
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/time-calendar-2/24/time_event_calendar_add_create-512.png" alt="Card image cap">                  
+                    </div>
+                    <br>                    
+                    <i class="fa fa-child" aria-hidden="true"></i> Crear Actividad en Calendario
+                </div>
+                
+            </div>
+
+            <div class="card-body">
+                <div class="Centrado">
+
+                <!--Fecha de Actualizacion-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" >Fecha de Evento:</label>
+                    <input type=date name="FechaIni" class="form-control" id="recipient-name"  [value]="ob_Fecha.Fecha" [(ngModel)]="FechaEvento">
+                </div>
+                
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Titulo:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Titulo" >
+
+                        <label for="recipient-name" class="col-form-label">Cuerpo 1:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Cuerpo1">
+
+                        <label for="recipient-name" class="col-form-label">Cuerpo 2:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Cuerpo2">
+
+                        <label for="recipient-name" class="col-form-label">Salida de Mensaje:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Salida" >
+
+                        <label for="recipient-name" class="col-form-label">Ruta Imagen:</label>
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="RutaImagen">
+                    </div>  
+                
+                
+                    <button type="button" class="btn btn-primary" (click)="AddAnuncio()" data-dismiss="modal">Guardar</button>
+                
+    
+                    <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
+                  
+                
+                
+            </div>
+            <br>
+            <div class="card-footer small text-muted"></div>
+        </div>
+
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

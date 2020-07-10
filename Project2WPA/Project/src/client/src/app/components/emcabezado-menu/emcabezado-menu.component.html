@@ -1,0 +1,175 @@
+<!--Titulo de emcabezados-->
+
+<nav class="navbar navbar-expand-lg bg-light navbar-light" style="background-color: #e3f2fd;" id="mainNav">
+    <img src="https://cdn4.iconfinder.com/data/icons/cinema-theater-photography-innovicons-vol-2/256/photography-courses-laptop-certificate-512.png" width="35" height="35" alt="">    
+    <a routerLink='/cursos-actuales' routerLinkActive="active">
+        Bienvenido: {{infoUser.name}} </a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+            <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">Datos del Usuario:</h6>
+                <div class="dropdown-divider"></div>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">
+                    <strong>Nombre del usuario</strong>
+                    <div class="dropdown-message small">{{infoUser.name}}</div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">
+                    <strong>Email</strong>
+                    <div class="dropdown-message small">{{infoUser.email}}</div>
+                </a>
+            </div>
+           
+            <!--INICIO DE MODULO DE DOCENTE-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ModuloDocente">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseModuloDocente" data-parent="#exampleAccordion">
+                    <img src="https://cdn3.iconfinder.com/data/icons/prettycons-education-vol-1-ultra/60/11-Presentation-education_school_teacher_learn-512.png" width="35" height="35" alt="">                   
+                    
+                    <span class="nav-link-text"> Módulo de Docente</span>
+                    <hr>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseModuloDocente">
+                    <li>                        
+                        <a routerLink='/cursos-actuales' routerLinkActive="active"><img src="https://cdn2.iconfinder.com/data/icons/e-learning-17/96/internet_online_library_classes-512.png" width="35" height="35" alt="">
+                            Cursos Actuales</a>
+                    </li>
+                    <li>                        
+                        <a routerLink='/revision' routerLinkActive="active"><img src="https://cdn1.iconfinder.com/data/icons/online-marketing-color-line-vol-2-1/256/READABILITY_CHECK-512.png" width="35" height="35" alt="">
+                            Revision Actividades</a>
+                    </li>   
+                    <li>                        
+                        <a routerLink='/crear-calendario' routerLinkActive="active"><img src="https://cdn2.iconfinder.com/data/icons/christmas-new-year-vol-2-1/512/37-calendar-year-date-512.png" width="35" height="35" alt="">
+                            Crear Anuncio</a>
+                    </li>  
+                    <li>                        
+                        <a routerLink='/chatdocente' routerLinkActive="active"><img src="https://cdn1.iconfinder.com/data/icons/popicon-education/256/11-512.png" width="35" height="35" alt="">
+                            Chat Docente</a>
+                    </li>                    
+                </ul>
+            </li>
+            
+            <!--INICIO DE MODULO DE PADRE DE FAMILIA-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ModuloPadre">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseModuloPadre" data-parent="#exampleAccordion">
+                    <img src="https://cdn4.iconfinder.com/data/icons/residential-sale-lease/128/family-house-parents-children-512.png" width="35" height="35" alt="">
+                    <span class="nav-link-text"> Módulo Padre de Familia</span>
+                    <hr>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseModuloPadre">
+                    <li>                        
+                        <a routerLink='/actividades' routerLinkActive="active"><img src="https://cdn0.iconfinder.com/data/icons/school-2-3/256/write_college_study_homework-512.png" width="35" height="35" alt="">
+                        Actividades</a>
+                    </li>
+                    <li>                        
+                        <a routerLink='/calificaciones' routerLinkActive="active"><img src="https://cdn0.iconfinder.com/data/icons/education-134/292/grade-2-512.png" width="35" height="35" alt="">
+                        Calificaciones</a>
+                    </li>
+                    <li>                        
+                        <a routerLink='/calendario' routerLinkActive="active"><img src="https://cdn1.iconfinder.com/data/icons/zimo-web-marketing/128/_-02-512.png" width="35" height="35" alt="">
+                        Pizzara Informativa</a>
+                    </li>
+                    <li>                        
+                        <a routerLink='/asistencias' routerLinkActive="active"><img src="https://cdn3.iconfinder.com/data/icons/miscellaneous-15-mix/168/absentees_attendance_cross_invalid_missing_removed_-512.png" width="35" height="35" alt="">
+                        Asistencias</a>
+                    </li>
+                    <li>                        
+                        <a routerLink='/reportes1' routerLinkActive="active"><img src="https://cdn3.iconfinder.com/data/icons/webina-seo-development-and-marketing/128/seo_web_3-93-512.png" width="35" height="35" alt="">
+                            Reportes</a>
+                    </li>
+                    <li>                        
+                        <a routerLink='/chatfamilia' routerLinkActive="active"><img src="https://cdn1.iconfinder.com/data/icons/popicon-education/256/11-512.png" width="35" height="35" alt="">
+                            Chat Familia</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="">
+                    <img src="https://cdn3.iconfinder.com/data/icons/multimedia-line-filled/614/500_-_Logout-512.png" width="35" height="35" alt="">
+                    <span class="nav-link-text"> Cerrar Sesión </span>
+                </a>
+               
+            </li>   
+<!--
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="">                    
+                    <i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+            </li>   
+-->
+        </ul>
+        <!-- boton de toggler del menu -->
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left" (click)="funNavToggel()"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- nav barra superior  -->
+    <ul class="navbar-nav ml-auto">        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-fw fa-user"></i>
+            </a>
+            
+
+            <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">Datos del Usuario:</h6>
+                <div class="dropdown-divider"></div>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">
+                    <strong>Nombre del usuario</strong>
+                    <div class="dropdown-message small">{{infoUser.name}}</div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">
+                    <strong>Email</strong>
+                    <div class="dropdown-message small">{{infoUser.email}}</div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+
+
+
+
+<!-- Logout Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesión?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+
+            <div class="modal-body">Estas Seguro de cerrar la Sesión </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <button class="btn btn-primary" type="button" routerLink='/IniciaLogin' data-dismiss="modal">Cerrar Sesión</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

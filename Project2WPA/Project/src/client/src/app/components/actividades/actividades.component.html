@@ -1,0 +1,120 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!-- -->
+<div class="content-wrapper">   
+    <div class="container-fluid">
+
+        <div class="card border-info mb-3" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <h1>Revisión de Actividades</h1>
+                </div>                
+            </div>            
+        </div>  
+        <!-- Area de INICIOOOOOOOOOOOOOOOOOOOO-->
+        <div class="card-group text-white bg-info mb-3" *ngFor="let ActividadesAlumnos of ActividadesAlumnos2 let i = index" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/school-childhood-education/128/IconSchool-1-512.png" alt="Card image cap">                    
+                    </div>
+                    <br>                                        
+                    <i class="fa fa-child" aria-hidden="true" ></i> {{ActividadesAlumnos.NombreMateria}}
+                    <br>
+                    <br>                    
+                    <div class="text-center">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customCheck1" [checked]="ActividadesAlumnos.Revisado">
+                          <label class="custom-control-label" for="customCheck1">Revisado</label>                        
+                        </div>
+                        <hr>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customCheck2" [checked]="ActividadesAlumnos.Finalizado">
+                          <label class="custom-control-label" for="customCheck2">Finalizado</label>                        
+                        </div>
+                      </div>                               
+                </div>                
+            </div>  
+            <div class="card-body ">
+                <h5 class="card-title">{{ActividadesAlumnos.Titulo}}</h5>
+                <h5 class="card-text">Detalles: {{ActividadesAlumnos.Cuerpo1}}</h5>
+                <h5 class="card-text">Fecha de Creación: {{ActividadesAlumnos.Fecha  | date:"medium"}}</h5>
+                <h5 class="card-text">Fecha de Vencimiento: {{ActividadesAlumnos.FechaVencimiento  | date:"medium"}}</h5>
+                <h4 class="card-text">Puntaje: {{ActividadesAlumnos.Puntaje}}</h4>          
+            </div>
+            <br>              
+            <br>                      
+        </div>
+
+          <!-- Area de FINNNNNNNNNNNNNNNNNNN-->
+
+        <div class="card border-info mb-3" *ngFor="let Materias of Materias; let i=index">
+            <div class="card-body text-info">                     
+                <div class="card-header">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn3.iconfinder.com/data/icons/hexagon-office-business-set-1/135/46-512.png" alt="Card image cap">                    
+                    </div>
+                    <br>                    
+                    <div class="Centrado">
+                        <h4 class="card-text">{{Materias.NombreMateria}} | <button class="btn btn-success" type="button" (click)="MostrarMateriaFiltro(Materias.Materia)"><h6>Mostrar</h6></button></h4> 
+                                               
+                    </div>                    
+                </div>          
+            </div>                                                  
+        </div>
+        <br>   
+   </div>
+</div>
+<br>
+<app-pie-pagina></app-pie-pagina>
+
+<div class="modal fade" id="ModalIngresoPoliticas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalIngresoPoliticas">Ingreso de Politicas De Caja</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+
+                <!--Descripcion-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Descripcion:</label>
+                    <input type="text" class="form-control" id="recipient-name" >
+                </div>
+
+                <!--Detalle de la Politica-->
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Detalle:</label>
+                    <textarea class="form-control" id="message-text" ></textarea>
+                </div>
+
+                <!--Ruta del Archivo-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" accept=".png, .jpg, .jpeg">                        
+                    </div>
+                </div>
+
+                <!--Fecha de Actualizacion-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Fecha Actualizacion:</label>
+                    <input type=date class="form-control" id="recipient-name" >
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary"  data-dismiss="modal">Guardar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,161 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="card border-warning mb-3" >
+            <div class="card-header ">
+                <div class="Centrado">
+                    <h1>Revisión de Actividades</h1>
+                </div>                
+            </div>            
+        </div>
+        
+       <!-- AQUI COMIENZA-->
+       <!--
+            <div class="card-group text-white bg-warning mb-3" *ngFor="let Actividades of ListaAlumnos">
+                <div class="card-header bg-transparent border-success">
+                    
+                    <div class="Centrado">
+                        <div class="imager">
+                            <img class="card-img-top" src="https://cdn3.iconfinder.com/data/icons/development-icons/128/done-512.png" alt="Card image cap">                    
+                        </div>
+                        <br>                    
+                        <i class="fa fa-child" aria-hidden="true"></i> Nombre:  <h5 class="card-title">{{Actividades.NombreAlumno}}</h5>                                                                             
+                        <h5 class="card-text" >_____________________________________</h5>                            
+                        <button class="btn btn-success" type="button" (click)="MostrarMateriaFiltro(CursosActuales.Materia)"><h6>Ver Actividades</h6></button>
+                    </div>                
+                </div>  
+                <div class="card-body">
+                    <h5 class="fa fa-child" aria-hidden="true"></h5> Seccion: {{Actividades.NombreSeccion}}<h5 class="card-title"></h5>                   
+                </div>
+                <br>  
+                <br>                      
+            </div>
+       AQUI TERMINA-->
+  
+        <!-- Area de detalle de inicio-->
+          <!-- Area de detalle de inicio-->
+        <div class="card-group text-white bg-warning mb-3" *ngFor="let CursosActuales of ListaAlumnos">            
+            <div class="card-header ">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/comics-style-vol-2/128/test-512.png" alt="Card image cap">                    
+                    
+                    </div>
+                    <br>            
+                    <h5 class="card-text" >{{CursosActuales.NombreAlumno}}</h5>                    
+                    <h5 class="card-text" >_____________________________________</h5>                            
+                    <button class="btn btn-success" routerLink='/revision/clases' type="button" ><h6>Ver Clases</h6></button>
+                                        
+                </div>                
+            </div>   
+            <div class="card-body">
+                <h2 class="fa fa-child" aria-hidden="true"></h2> Actividades en clase {{CursosActuales.NombreCurso}} | Seccion: {{CursosActuales.NombreSeccion}} 
+                <hr>
+                <h2 class="fa fa-child" aria-hidden="true"></h2> Periodo: {{CursosActuales.NombrePeriodoEscolar}} 
+                <hr>
+                <h2 class="fa fa-child" aria-hidden="true"></h2> Tipo: {{CursosActuales.NombreJornada}}
+            </div>                 
+        </div>
+
+        
+        
+    <br>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+       <!--  <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-tasks" aria-hidden="true"></i> Informacion de Actividades
+            </div>
+
+
+            <div class="card-body">
+                <div>
+                    
+                </div>
+            </div>           
+        </div> -->
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<div class="modal fade" id="ModalIngresoPoliticas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <img src="https://cdn2.iconfinder.com/data/icons/scenarium-silver-vol-2/128/043_add_new_plus_create-2-512.png" width="35" height="35" alt="">
+                <h5 class="modal-title" id="ModalIngresoPoliticas">Ingreso de Actividad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+
+                <!--Fecha,Alumno,Materia,Titulo,Cuerpo1,Curso,Seccion,PeriodoEscolar,Jornada,FechaVencimiento,Revisado,Finalizado,
+                    FechaCambioEstado,Institucion,Uposteo,Fposteo,PC-->
+
+                <!--Fecha de Actualizacion-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Fecha Creacion:</label>
+                    <input type=date name="FechaIni" class="form-control" id="recipient-name" [value]="ob_Fecha.Fecha" >
+                </div>
+                                
+                <!--Materia
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Materia:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Materia">
+                </div>
+                -->
+                <div class="form-group">
+                    <select class="form-control form-control-primary" name="Materia" [(ngModel)]="Materia">
+                    <option selected >--Seleccione Materia--</option>
+                    <option *ngFor="let CursosActuales of CursosActuales">{{CursosActuales.NombreMateria}}</option>                  
+                    </select>
+                </div>
+
+                <!--Titulo-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Titulo:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Titulo">
+                </div>
+
+                <!--Detalle Cuerpo1-->
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Cuerpo:</label>
+                    <textarea class="form-control" id="message-text" [(ngModel)]="Cuerpo1" ></textarea>
+                </div>
+
+
+                <!--<input type="file" (change)="onChange($event)" /> -->
+
+                <!--Fecha de Vencimiento-->
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Fecha de Vencimiento:</label>
+                    <input type=date class="form-control" id="recipient-name" [(ngModel)]="FechaVencimiento" [value]="ob_Fecha.Fecha">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Puntaje:</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Puntaje">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

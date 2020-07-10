@@ -1,0 +1,44 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+         
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="Centrado">
+                    <div class="imager">
+                        <img class="card-img-top" src="https://cdn4.iconfinder.com/data/icons/education-training/33/male_teacher-512.png" alt="Card image cap">                  
+                    </div>
+                    <br>                    
+                    <i class="fa fa-child" aria-hidden="true"></i> Chat Docente
+                </div>                
+            </div>
+
+        <div class="card-body">            
+                    <div class="form-group">                                                                                                            
+                        <div class="card mb-3" *ngFor="let CargarMensaje of CargarMensaje">                            
+                            <div class="card-header">
+                                <div class="imager2"><img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/mixed-concept-line-set-5/262/239-512.png" alt="Card image cap"></div>
+                                <h5>{{CargarMensaje.Fposteo  | date }} | Hora: {{CargarMensaje.Hora  }}
+                                <hr>
+                                {{CargarMensaje.Mensaje}}
+                            </h5>
+                            </div>
+                        </div>                        
+                        <label for="message-text" class="col-form-label">Ingresar Mensaje:</label>                        
+                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="Mensaje">
+                        <br>
+                        <button mat-button mat-raised-button color="primary" (click)="SendMessage()" data-dismiss="modal">Enviar Mensaje</button> 
+                    </div>                                                                                              
+        <br>
+            <div class="card-footer small text-muted">
+                Chat
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>

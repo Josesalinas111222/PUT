@@ -1,0 +1,67 @@
+<app-emcabezado-menu></app-emcabezado-menu>
+<!--  -->
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <!--nav de Inicio dentro del body de inicio-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a routerLink='/materias'>Materias</a>
+            </li>
+            <li class="breadcrumb-item active"><a>Bienvenido a Pantalla de Materias Escolares: </a>{{infoUser.name}}</li>
+        </ol>
+
+        <!-- Area de detalle de inicio-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-home"></i> Carga de Archivos de Materias Escolares
+            </div>
+
+            <div class="card-body">
+                <div class = "card mb-3">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="SubirArchivo"> Tamano de archivo maximo permitido para cargar: 25 MB </label>                           
+                        </div>
+                    </div>
+
+                      <div class="btn btn-dark">
+                        <div class="btn btn-outline-light">
+                          <span> Seleccione el Archivo de Excel </span>
+                          <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx"/>
+                        </div>                        
+                      </div>
+
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+
+                
+                        
+                    <table class="sjs-table">
+                        <tbody>
+                            <tr *ngFor="let row of data">
+                                <td *ngFor="let val of row">
+                                    {{val}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        <button (click)="export()">Export!</button>
+    
+                      <div class="file-field">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" disabled>Submit</button>
+                        <button type="reset" class="btn btn-warning btn-lg btn-block">Reset</button>
+                      </div>                        
+                </div>
+            </div>
+            <div class="card-footer small text-muted">{{fechas | date:"medium" }}</div>
+        </div>
+    </div>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
+
+<router-outlet></router-outlet>
+

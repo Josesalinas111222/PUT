@@ -32,7 +32,7 @@
         "sweetalert": "^2.1.0",
         "tableexport": "^5.2.0",
         "ts-xlsx": "0.0.11",
-        "xlsx": "^0.14.1"
+        "xlsx": "^0.17.0"
     },
     "devDependencies": {
         "nodemon": "^1.17.5"
